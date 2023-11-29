@@ -21,16 +21,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/customers', function () {
-    return view('customers.index');
-});
-
-Route::get('/customers/create', function () {
-    return view('customers.create');
-});
-
-Route::get('/customers/{id}/edit', function () {
-    return view('customers.edit');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/customers', [\App\Http\Controllers\CustomerController::class, 'index']);
+    Route::get('/customers/create', [\App\Http\Controllers\CustomerController::class, 'create']);
+    Route::get('/customers/{id}/edit', [\App\Http\Controllers\CustomerController::class, 'edit']);
 });
 
 require __DIR__.'/auth.php';
