@@ -24,6 +24,7 @@ Route::get('/dashboard', function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/customers', [\App\Http\Controllers\CustomerController::class, 'index']);
     Route::get('/customers/create', [\App\Http\Controllers\CustomerController::class, 'create']);
+    Route::post('/customers', [\App\Http\Controllers\CustomerController::class, 'store']);
     Route::get('/customers/{id}/edit', [\App\Http\Controllers\CustomerController::class, 'edit']);
 });
 

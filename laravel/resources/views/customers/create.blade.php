@@ -7,7 +7,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <form class="grid grid-cols-1 gap-4">
+                    <form method="post" action="/customers" class="grid grid-cols-1 gap-4">
+                        @csrf
                         <div class="grid grid-cols-4 items-center">
                             <label class="col-span-1 text-right">顧客名：</label>  
                             <div class="col-span-2">
