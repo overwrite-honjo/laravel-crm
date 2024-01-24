@@ -11,10 +11,9 @@
                         <form>
                             <label>
                                 顧客名：
-                                <input class="border border-gray-200 rounded p-1" name="name"/>
+                                <input class="border border-gray-200 rounded p-1" name="name" value="{{ $name }}"/>
                             </label>
                             <button
-                                type="button" 
                                 class="px-2 py-1 border border-gray-200 rounded bg-blue-400 text-white"
                             >検索</button>
                         </form>
@@ -42,10 +41,10 @@
                             <td class="px-4 py-2 border border-gray-200">{{ $customer->email }}</td>
                             <td class="px-4 py-2 border border-gray-200">{{ $customer->user_id }}</td>
                             <td class="px-4 py-2 border border-gray-200 text-center">
-                                <button
-                                 type="button" 
+                                <a
+                                 href="/customers/{{ $customer->id }}/edit" 
                                  class="px-2 py-1 border border-gray-200 rounded bg-yellow-400"
-                                 >編集</button>
+                                 >編集</a>
                             </td>
                             <td class="px-4 py-2 border border-gray-200 text-center">
                             <button
