@@ -51,4 +51,10 @@ class CustomerController extends Controller
         return redirect('/customers');
     }
 
+    public function destroy($id)
+    {
+        $customer = Customer::query()->find($id);
+        $customer->delete();
+        return redirect('/customers');
+    }
 }

@@ -47,10 +47,11 @@
                                  >編集</a>
                             </td>
                             <td class="px-4 py-2 border border-gray-200 text-center">
-                            <button
-                                 type="button" 
-                                 class="px-2 py-1 border border-gray-200 rounded bg-red-500 text-white"
-                                 >削除</button>
+                                <form method="post" action="/customers/{{ $customer->id }}">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="px-2 py-1 border border-gray-200 rounded bg-red-500 text-white">削除</button>
+                                </form>
                             </td>
                             </tr>
                         @endforeach
